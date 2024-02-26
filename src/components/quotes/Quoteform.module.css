@@ -1,0 +1,32 @@
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+.section form {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.section form label {
+  font-weight: bold;
+}
+.section input,
+.section textarea {
+  padding: 0.5rem;
+  background-color: #f0f0f0;
+  font-size: 1.2rem;
+}
+.section button {
+  position: relative;
+  left: 73%;
+  border: 0px solid red;
+  width: 6rem;
+  height: 2rem;
+  background-color: rgb(18, 131, 149);
+  color: white;
+}
+.section button:hover {
+  cursor: grabbing;
+}

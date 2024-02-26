@@ -1,0 +1,29 @@
+.item {
+  background-color: rgb(84, 209, 209);
+  margin: 1rem 0;
+  padding: 0 1rem;
+  display: flex;
+  justify-content:space-evenly;
+  align-items: flex-end;
+}
+
+.item figure {
+  margin: 0;
+  padding: 0.5rem;
+  width: 70%;
+}
+
+.item blockquote {
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+.item figure figcaption {
+  font-style: italic;
+  color: grey;
+}
+.item a {
+  margin-bottom: 2rem;
+
+}

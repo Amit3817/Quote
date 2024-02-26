@@ -1,0 +1,13 @@
+.item {
+  /* background-color: rgb(92, 84, 209); */
+  margin: 1rem 0;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 1px solid red;
+  border-top: 1px solid red;
+}
+.item p {
+  color: black;
+}

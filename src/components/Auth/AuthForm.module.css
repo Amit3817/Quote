@@ -1,0 +1,41 @@
+.auth {
+  text-align: center;
+  background-color: rgb(18, 131, 149);
+  /* margin:15rem 10rem; */
+  padding: 7rem;
+  color: white;
+  overflow: hidden;
+}
+/* .div form {
+    align-items: flex-start;
+} */
+.auth h1 {
+  position: relative;
+  bottom: 3rem;
+}
+
+.control input {
+  width: 100%;
+  padding: 1%;
+}
+.control label {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+.btnn {
+  margin: 1rem;
+  padding: 0;
+  color: white;
+}
+.btnn:hover {
+  color: rgb(210, 209, 209);
+}
+.btncntrl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
