@@ -1,4 +1,5 @@
 const FIREBASE_DOMAIN = import.meta.env.VITE_FIREBASE_DOMAIN;
+const APIKEY=import.meta.env.VITE_APIKEY
 
 export async function addQuote(quoteData) {
   const response = await fetch(`${FIREBASE_DOMAIN}/quotes.json`, {
@@ -86,7 +87,7 @@ export async function allComments(qid) {
 
 export async function signUp(auth) {
   const response = await fetch(
-    `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyD9Nbq_YP5ydLX-susVLQrGXO-z3v2zPOM`,
+    `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${APIKEY}`,
     {
       method: "POST",
       body: JSON.stringify({
@@ -113,7 +114,7 @@ export async function signUp(auth) {
 }
 export async function signIn(auth) {
   const response = await fetch(
-    `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyD9Nbq_YP5ydLX-susVLQrGXO-z3v2zPOM`,
+    `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${APIKEY}`,
     {
       method: "POST",
       body: JSON.stringify({
@@ -127,7 +128,6 @@ export async function signIn(auth) {
     }
   );
   const data = await response.json();
-  console.log(data);
   if (!response.ok) {
     let errorMessage = "Authentication failed";
     if (data && data.error && data.error.message) {

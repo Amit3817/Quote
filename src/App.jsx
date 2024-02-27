@@ -27,9 +27,9 @@ function App() {
           <Suspense fallback=<Spinner />>
             <Routes>
               <Route path="/" element={<Navigate to="/quotes" replace />} />
-              {!(authCtx.isLoggedIn) && 
+              {!authCtx.isLoggedIn && (
                 <Route path="/auth" element={<AuthPage />} />
-              }
+              )}
               <Route path="quotes" element=<Quotes /> />
               {authCtx.isLoggedIn && (
                 <Route path="addquote" element=<AddQuote /> />
@@ -40,7 +40,11 @@ function App() {
                 )}
               </Route>
 
-              <Route path="*" element={<Navigate to={`${authCtx.isLoggedIn?"./quotes":"./auth"}`} replace />} />              
+              {authCtx.isLoggedIn ? (
+                <Route path="*" element={<Navigate to="./quotes" replace />} />
+              ) : (
+                <Route path="*" element={<Navigate to="./auth" replace />} />
+              )}
             </Routes>
           </Suspense>
         </Layout>

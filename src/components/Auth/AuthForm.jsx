@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useRef, useState, useEffect } from "react";
 import classes from "./AuthForm.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import useHttp from "../../hooks/useHttp";
@@ -10,11 +10,18 @@ const AuthForm = () => {
   const [login, setlogin] = useState(true);
   const inputEmail = useRef();
   const inputPassword = useRef();
-  const authCtx=useContext(AuthContext)
-  const navigate=useNavigate();
+  const authCtx = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const { sendRequest, status, data, error } = useHttp(login ? signIn : signUp);
 
+  useEffect(() => {
+    if (status === "completed" && !error) {
+      const expiresIn = new Date(new Date().getTime() + +data.expiresIn * 1000);
+      authCtx.logIn(data.idToken, expiresIn.toString());
+      navigate("../quotes");
+    }
+  }, [status, error, data, authCtx, navigate]);
   const authHandler = (event) => {
     event.preventDefault();
     const enteredEmail = inputEmail.current.value;
@@ -22,11 +29,6 @@ const AuthForm = () => {
 
     sendRequest({ email: enteredEmail, password: enteredPassword });
   };
-  if (status === "completed"&&!error) 
-  {
-    authCtx.logIn(data.idToken)
-    navigate("../quotes")
-  }
 
   return (
     <>
