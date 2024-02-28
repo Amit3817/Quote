@@ -22,9 +22,8 @@
   font-size: 1.2rem;
 }
 .section button {
-  position: relative;
-  left: 73%;
-  border: 0px solid red;
+  margin-top: 1rem;
+  border: 0px solid white;
   width: 6rem;
   height: 2rem;
   background-color: rgb(18, 131, 149);

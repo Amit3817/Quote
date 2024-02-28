@@ -1,4 +1,3 @@
-import classes from "./Quotes.module.css";
 import QuoteList from "../components/quotes/QuoteList";
 import { useEffect } from "react";
 import useHttp from "../hooks/useHttp";
