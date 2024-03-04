@@ -20,6 +20,17 @@ const Quoteform = (props) => {
 
   function submitFormHandler(event) {
     event.preventDefault();
+    if(author=="")
+    {
+
+      alert("Please enter author name")
+      return ;
+    }
+    if(text=="")
+    {
+      alert("Please enter author name")
+      return;
+    }
     props.onAddQuote({ author: author, text: text });
     win.clear();
     setAuthor("");
