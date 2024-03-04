@@ -1,8 +1,8 @@
-import QuoteList from "../components/quotes/QuoteList";
+import QuoteList from "../components/quotes/QuoteList.jsx";
 import { useEffect } from "react";
-import useHttp from "../hooks/useHttp";
-import { allQuotes } from "../lib/api";
-import Spinner from "../components/loading/Spin";
+import useHttp from "../hooks/useHttp.jsx";
+import { allQuotes } from "../lib/api.jsx";
+import Spinner from "../components/loading/Spin.jsx";
 import NoQuote from "../components/quotes/NoQuote.jsx";
 
 const Quotes = () => {
@@ -22,7 +22,7 @@ const Quotes = () => {
   }
 
   return (
-    <section className={classes.section}>
+    <section >
       <QuoteList quotes={data} />
     </section>
   );

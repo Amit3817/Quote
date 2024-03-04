@@ -8,14 +8,14 @@ import {
 import { lazy, Suspense, useContext } from "react";
 import Layout from "./components/layout/Layout.jsx";
 import Spinner from "./components/loading/Spin.jsx";
-import AuthPage from "./pages/AuthPage.jsx";
+import AuthPage from "./pages/AuthPages.jsx";
 import AuthContext from "./store/AuthContext.jsx";
-const Quotes = lazy(() => import("./pages/Quotes.jsx"));
+const Quotes = lazy(() => import("./pages/Quote.jsx"));
 const QuoteDetails = lazy(() => import("./pages/QuoteDetails.jsx"));
 const AddQuote = lazy(() => import("./pages/AddQuote.jsx"));
 const Comments = lazy(() => import("./components/comments/Comment.jsx"));
 const Notfound = lazy(() => import("./pages/Notfound.jsx"));
-const Auth = lazy(() => import("./pages/AuthPage.jsx"));
+const Auth = lazy(() => import("./pages/AuthPages.jsx"));
 
 function App() {
   const authCtx = useContext(AuthContext);
